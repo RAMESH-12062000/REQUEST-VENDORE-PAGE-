@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZEWM_PARKING_LOT_SYSTEM_SRV_01" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZEWM_T_ALDSLOTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AssignedslotId"/>
+                </Key>
+                <Property Name="AssignedslotId" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="ASSIGNEDSLOT ID"/>
+                <Property Name="Vehiclenumber" Type="Edm.String" sap:unicode="false" sap:label="VEHICLE_NO"/>
+                <Property Name="Vehicletype" Type="Edm.String" sap:unicode="false" sap:label="VEHICLE_TYPE"/>
+                <Property Name="Drivername" Type="Edm.String" sap:unicode="false" sap:label="DRIVER_NAME"/>
+                <Property Name="Drivernumber" Type="Edm.String" sap:unicode="false" sap:label="DRIVER_PHONE"/>
+                <Property Name="Intime" Type="Edm.String" sap:unicode="false" sap:label="IN_DETAILS"/>
+                <Property Name="Slotnumber" Type="Edm.String" sap:unicode="false" sap:label="SLOTNO"/>
+                <Property Name="ServiceType" Type="Edm.String" sap:unicode="false" sap:label="SERVICE_TYPE"/>
+            </EntityType>
+            <EntityType Name="ZEWM_T_RESERVS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="36 Digit ID"/>
+                <Property Name="Vendorname" Type="Edm.String" sap:unicode="false" sap:label="Vendor Name"/>
+                <Property Name="Vendornumber" Type="Edm.String" sap:unicode="false" sap:label="Vendor Number"/>
+                <Property Name="Drivername" Type="Edm.String" sap:unicode="false" sap:label="Driver Name"/>
+                <Property Name="Drivernumber" Type="Edm.String" sap:unicode="false" sap:label="Driver Number"/>
+                <Property Name="Vehicletype" Type="Edm.String" sap:unicode="false" sap:label="Vehicle Type"/>
+                <Property Name="Vehiclenumber" Type="Edm.String" sap:unicode="false" sap:label="Vehicle Number"/>
+                <Property Name="Servicetype" Type="Edm.String" sap:unicode="false" sap:label="Service Type"/>
+            </EntityType>
+            <EntityType Name="ZEWM_T_RSDSLOTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="36 Digit ID"/>
+                <Property Name="Vendorname" Type="Edm.String" sap:unicode="false" sap:label="Vendor Name"/>
+                <Property Name="Vendornumber" Type="Edm.String" sap:unicode="false" sap:label="Vendor Number"/>
+                <Property Name="DriverName" Type="Edm.String" sap:unicode="false" sap:label="Driver Name"/>
+                <Property Name="DriverNumber" Type="Edm.String" sap:unicode="false" sap:label="Driver Number"/>
+                <Property Name="Slotnumber" Type="Edm.String" sap:unicode="false" sap:label="Slot Number"/>
+                <Property Name="Vehicletype" Type="Edm.String" sap:unicode="false" sap:label="Vehicle Type"/>
+                <Property Name="Vehiclenumber" Type="Edm.String" sap:unicode="false" sap:label="Vehicle Number"/>
+                <Property Name="Servicetype" Type="Edm.String" sap:unicode="false" sap:label="Service Type"/>
+            </EntityType>
+            <EntityType Name="ZEWM_T_HISTORY" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MANDT" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="36 Digit ID"/>
+                <Property Name="Slotnumber" Type="Edm.String" sap:unicode="false" sap:label="Slot Number"/>
+                <Property Name="Servicetype" Type="Edm.String" sap:unicode="false" sap:label="Service type"/>
+                <Property Name="Vehicletype" Type="Edm.String" sap:unicode="false" sap:label="Vehicle Type"/>
+                <Property Name="Vehiclenumber" Type="Edm.String" sap:unicode="false" sap:label="Vehicle number"/>
+                <Property Name="Drivernumber" Type="Edm.String" sap:unicode="false" sap:label="Driver Number"/>
+                <Property Name="Drivername" Type="Edm.String" sap:unicode="false" sap:label="Driver Name"/>
+                <Property Name="Intime" Type="Edm.String" sap:unicode="false" sap:label="In Time"/>
+                <Property Name="Outtime" Type="Edm.String" sap:unicode="false" sap:label="Out Time"/>
+            </EntityType>
+            <EntityType Name="ZEWM_T_ALLSLOTS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="36" sap:unicode="false" sap:label="36Digit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Slotno" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="SlotNumber" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Servicetype" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ServiceType" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZEWM_PARKING_LOT_SYSTEM_SRV_01_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZEWM_T_ALDSLOTSSet" EntityType="ZEWM_PARKING_LOT_SYSTEM_SRV_01.ZEWM_T_ALDSLOTS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEWM_T_RESERVSSet" EntityType="ZEWM_PARKING_LOT_SYSTEM_SRV_01.ZEWM_T_RESERVS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEWM_T_RSDSLOTSSet" EntityType="ZEWM_PARKING_LOT_SYSTEM_SRV_01.ZEWM_T_RSDSLOTS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEWM_T_HISTORYSet" EntityType="ZEWM_PARKING_LOT_SYSTEM_SRV_01.ZEWM_T_HISTORY" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZEWM_T_ALLSLOTSSet" EntityType="ZEWM_PARKING_LOT_SYSTEM_SRV_01.ZEWM_T_ALLSLOTS" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://vhcalakeci.artihcus.com:50600/sap/opu/odata/sap/ZEWM_PARKING_LOT_SYSTEM_SRV_01/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://vhcalakeci.artihcus.com:50600/sap/opu/odata/sap/ZEWM_PARKING_LOT_SYSTEM_SRV_01/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

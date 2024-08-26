@@ -1,0 +1,145 @@
+/* Animation for Login Container */
+.SubmitBtnFromVendorPage .sapMBtnText {
+    background-color: white !important;
+    color: green;
+    margin-right: 0.5rem;
+}
+.ClearBtnFromVendorPage .sapMBtnText {
+    background-color: white !important;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slideDown {
+    display: flex;
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Enter your custom styles here */
+.HomePageBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://i.ibb.co/XxVRnmB/image-00001.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.mainContainer.centered {
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+}
+
+.mainContainer.leftAligned {
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    left: 2.3rem;
+}
+
+.descriptionContainer {
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.5s ease-out;
+}
+
+.descriptionContainer.leftAligned {
+    text-align: left;
+}
+
+.TextParkingLot {
+    color: rgb(30, 248, 230);
+    font-size: x-large;
+    font-style: oblique;
+}
+
+.ParkingSubtitle {
+    color: rgb(9, 231, 183);
+    font-size: medium;
+    font-style: normal;
+}
+
+.loginContainer {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 400% !important;
+    text-align: start;
+    margin: auto;
+    transition: all 0.5s ease-out;
+}
+
+.loginContainer.rightAligned {
+    margin-left: auto;
+    margin-top: -6% !important;
+    margin-right: 4rem;
+}
+
+.sapUiSmallMarginTop {
+    margin-top: 1rem;
+}
+
+.HeaderName {
+    margin: auto;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.header {
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.568);
+}
+
+.navButton1 {
+    margin: auto;
+    margin-top: 10px;
+    margin-right: 2.5rem;
+}
+
+.navButton {
+    margin: 10px;
+    font-size: medium;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mainContainer {
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .descriptionContainer,
+    .loginContainer {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+        margin-right: 1rem;
+    }
+
+    .descriptionContainer {
+        text-align: center;
+    }
+}
